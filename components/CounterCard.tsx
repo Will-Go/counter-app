@@ -84,7 +84,7 @@ export function CounterCard({ counter, onUpdate, onDelete }: CounterCardProps) {
       >
         <GripVertical className="h-3 w-3 sm:h-4 sm:w-4" />
       </div>
-      <CardContent className="p-4 sm:p-6">
+      <CardContent className="p-4 sm:p-6 group">
         <div className="flex flex-col items-center space-y-3 sm:space-y-4">
           {isEditing ? (
             <Input
@@ -97,13 +97,13 @@ export function CounterCard({ counter, onUpdate, onDelete }: CounterCardProps) {
             />
           ) : (
             <div
-              className="group relative flex items-center gap-1 sm:gap-2 cursor-pointer"
+              className=" relative flex items-center gap-1 sm:gap-2 cursor-pointer"
               onClick={() => setIsEditing(true)}
             >
               <h3 className="text-base sm:text-lg font-medium hover:text-primary transition-colors">
                 {counter.name}
               </h3>
-              <Edit3 className="h-3 w-3 sm:h-4 sm:w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Edit3 className="h-3 w-3 sm:h-4 sm:w-4 text-muted-foreground opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity" />
             </div>
           )}
 
